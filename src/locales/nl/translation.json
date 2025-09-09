@@ -1,0 +1,12 @@
+{ "lang": "Kies platformtaal",
+  "auth": {
+    "lb_email": "Uw e-mailadres", 
+    "ph_email": "voorbeeld@voorbeeld.com",
+    "lb_login": "Inloggen",
+    "ph_login": "Voer login in",
+    "lb_password": "Wachtwoord",
+    "ph_password": "Minimaal 8 tekens",
+    "lb_repeatPassword": "Herhaal wachtwoord",
+    "ph_repeatPassword": "Herhaal wachtwoord"
+  }
+}

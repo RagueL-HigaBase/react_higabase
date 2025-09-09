@@ -1,0 +1,13 @@
+{ 
+  "lang": "Select platform language",
+  "auth": {
+    "lb_email": "Your email adress", 
+    "ph_email": "exemple@example.com",
+    "lb_login": "Login",
+    "ph_login": "Enter password",
+    "lb_password": "Enter password",
+    "ph_password": "Minimum 8 symbols",
+    "lb_repeatPassword": "Repeat password",
+    "ph_repeatPassword": "Repeat password"
+  }
+}
