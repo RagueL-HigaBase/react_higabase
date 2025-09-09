@@ -15,7 +15,7 @@ export function LoginPage() {
         <>
         <Center style={{ height: '100vh' }}>
             <Grid justify="center" style={{ width: '90%'}}>
-                <Grid.Col span={{ base: 12, md: 3 }} >
+                <Grid.Col span={{ base: 12, md: 2 }} >
                     <Input.Wrapper label="Email adress" style={{ textTransform: "uppercase" }} size="xs">
                         <Input placeholder="exemple@example.com" key={form.key('email')} {...form.getInputProps('email')}/>
                     </Input.Wrapper>
