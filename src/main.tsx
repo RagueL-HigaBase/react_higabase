@@ -1,10 +1,19 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
+import '@mantine/core/styles.css'
+import { MantineProvider } from '@mantine/core'
+
 
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
+    <StrictMode>
+        <MantineProvider 
+        theme={{ fontFamily: 'Nunito, sans-serif' }}
+        defaultColorScheme='auto'>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
+        </MantineProvider>
+    </StrictMode>
 )
