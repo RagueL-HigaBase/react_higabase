@@ -28,7 +28,7 @@ export function RegisterPage() {
     useEffect(() => {
         const { hbEmail } = form.errors;
         if (typeof hbEmail === "string") {
-            setEmail(t(`${hbEmail}`))
+            setEmail(t(hbEmail.toString()))
         }
         // if (hbPassword) {
         //     setEmail(t(hbPassword))
