@@ -21,7 +21,7 @@ i18n
         lt: { translation: lt },
 
         },
-        supportedLngs: ['en', 'nl', 'pl', 'lv', 'lt'], 
+        supportedLngs: ['en', 'nl', 'lv', 'lt'], 
         nonExplicitSupportedLngs: true,
         fallbackLng: 'en',
         interpolation: { escapeValue: false },

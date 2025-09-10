@@ -61,8 +61,6 @@ export function RegisterPage() {
                 ]}
                 value={i18n.resolvedLanguage}
                 onChange={(code) => code && i18n.changeLanguage(code)}
-                error={email}
-
             />
             <TextInput
                 leftSection={<IconUser size={16}/>}
@@ -74,6 +72,7 @@ export function RegisterPage() {
                 autoComplete="email"
                 key={form.key('hbEmail')} 
                 {...form.getInputProps('hbEmail')}
+                error={email}
             />
             <PasswordInput
                 leftSection={<IconPasswordUser size={16}/>}
