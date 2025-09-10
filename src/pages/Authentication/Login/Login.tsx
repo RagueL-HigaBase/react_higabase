@@ -1,8 +1,9 @@
-import { Center, Image, PasswordInput, Select, Stack, TextInput } from "@mantine/core";
+import { Button, Center, Divider, Image, PasswordInput, Select, Stack, TextInput, Title } from "@mantine/core";
 import { useForm } from '@mantine/form';
 import * as z from "zod";
 import { useTranslation } from "react-i18next";
-import { IconFlag, IconPasswordUser, IconUser } from "@tabler/icons-react";
+import { IconArrowRight, IconFlag, IconPasswordUser, IconRegistered, IconUser } from "@tabler/icons-react";
+import { ToggleScheme } from "../../../components/Styles/ToggleScheme/ToggleScheme";
 
 export function LoginPage() {
     const { t, i18n } = useTranslation();
@@ -23,7 +24,9 @@ export function LoginPage() {
         <Center h={"100vh"}>
         <form style={{ width: "100%"}}>
         <Stack w={"100%"} maw={500} px={"xl"} gap={"xs"} mx="auto" align="center">
-            <Image w={"200"} src={"./logo_transparent.png"}/>
+            <Image w={"250"} src={"./logo.png"}/>
+            <Title order={4}>{t("auth.tl_create")}</Title>
+            <Divider w={"100%"} label={<ToggleScheme/>}/>
             <TextInput
                 id="hover-me" 
                 leftSection={<IconUser size={16}/>}
@@ -71,6 +74,14 @@ export function LoginPage() {
                 value={i18n.resolvedLanguage}
                 onChange={(code) => code && i18n.changeLanguage(code)}
             />
+            <Button
+
+                m={'md'}
+                w={"100%"}
+                variant="light"
+                leftSection={<IconRegistered size={16}/>}
+                rightSection={<IconArrowRight size={16}/>}
+            >{t("auth.bt_create")}</Button>
         </Stack>
         </form>
         </Center>

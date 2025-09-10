@@ -1,0 +1,23 @@
+{ 
+    "not_provided": "Tłumaczenie niedostępne",
+    "lang": "Wybierz język platformy",
+    "auth": {
+        "tl_create": "Rozpocznij",
+        "lb_email": "Twój adres e-mail", 
+        "ph_email": "przyklad@przyklad.pl",
+        "lb_login": "Zaloguj się",
+        "ph_login": "Wpisz hasło",
+        "lb_password": "Hasło",
+        "ph_password": "Minimum 8 znaków",
+        "lb_repeatPassword": "Powtórz hasło",
+        "ph_repeatPassword": "Powtórz hasło",
+        "bt_create": "Utwórz konto",
+        "dv_aleary": "Masz już konto?"
+    },
+    "validate": {
+        "vd_email": "Podaj prawidłowy adres e-mail",
+        "vd_password": "Hasło musi mieć co najmniej 8 znaków",
+        "vd_confirm": "Nie może przekraczać 32 znaków",
+        "vd_not_match": "Hasła nie są takie same — wpisz to samo hasło w obu polach"
+    } 
+}

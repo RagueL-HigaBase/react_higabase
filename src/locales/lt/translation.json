@@ -1,0 +1,23 @@
+{ 
+    "not_provided": "Vertimas nepateiktas",
+    "lang": "Pasirinkite platformos kalbą",
+    "auth": {
+        "tl_create": "Pradėti",
+        "lb_email": "Jūsų el. pašto adresas", 
+        "ph_email": "pavyzdys@pavyzdys.lt",
+        "lb_login": "Prisijungti",
+        "ph_login": "Įveskite slaptažodį",
+        "lb_password": "Slaptažodis",
+        "ph_password": "Mažiausiai 8 simboliai",
+        "lb_repeatPassword": "Pakartokite slaptažodį",
+        "ph_repeatPassword": "Pakartokite slaptažodį",
+        "bt_create": "Sukurti paskyrą",
+        "dv_aleary": "Jau turite paskyrą?"
+    },
+    "validate": {
+        "vd_email": "Įveskite galiojantį el. pašto adresą",
+        "vd_password": "Slaptažodis turi būti bent 8 simbolių",
+        "vd_confirm": "Negali viršyti 32 simbolių",
+        "vd_not_match": "Slaptažodžiai nesutampa — įveskite tą patį slaptažodį abiejuose laukuose"
+    } 
+}

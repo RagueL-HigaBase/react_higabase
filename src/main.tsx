@@ -6,7 +6,6 @@ import '@mantine/core/styles.css'
 import { MantineProvider } from '@mantine/core'
 import "./i18n.ts";
 
-
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <MantineProvider 

@@ -1,0 +1,23 @@
+{ 
+    "not_provided": "Tulkojums nav pieejams",
+    "lang": "Izvēlieties platformas valodu",
+    "auth": {
+        "tl_create": "Sākt",
+        "lb_email": "Jūsu e-pasta adrese", 
+        "ph_email": "piemers@piemers.lv",
+        "lb_login": "Pieteikšanās",
+        "ph_login": "Ievadiet paroli",
+        "lb_password": "Parole",
+        "ph_password": "Vismaz 8 simboli",
+        "lb_repeatPassword": "Atkārtojiet paroli",
+        "ph_repeatPassword": "Atkārtojiet paroli",
+        "bt_create": "Izveidot kontu",
+        "dv_aleary": "Jau esat reģistrējies?"
+    },
+    "validate": {
+        "vd_email": "Lūdzu, ievadiet derīgu e-pasta adresi",
+        "vd_password": "Parolei jābūt vismaz 8 rakstzīmēm",
+        "vd_confirm": "Nedrīkst pārsniegt 32 rakstzīmes",
+        "vd_not_match": "Paroles nesakrīt — ievadiet vienu un to pašu paroli abos laukos"
+    } 
+}

@@ -1,12 +1,23 @@
-{ "lang": "Kies platformtaal",
-  "auth": {
-    "lb_email": "Uw e-mailadres", 
-    "ph_email": "voorbeeld@voorbeeld.com",
-    "lb_login": "Inloggen",
-    "ph_login": "Voer login in",
-    "lb_password": "Wachtwoord",
-    "ph_password": "Minimaal 8 tekens",
-    "lb_repeatPassword": "Herhaal wachtwoord",
-    "ph_repeatPassword": "Herhaal wachtwoord"
-  }
+{ 
+    "not_provided": "Vertaling niet beschikbaar",
+    "lang": "Kies platformtaal",
+    "auth": {
+        "tl_create": "Aan de slag",
+        "lb_email": "Uw e-mailadres", 
+        "ph_email": "voorbeeld@voorbeeld.com",
+        "lb_login": "Inloggen",
+        "ph_login": "Voer login in",
+        "lb_password": "Wachtwoord",
+        "ph_password": "Minimaal 8 tekens",
+        "lb_repeatPassword": "Herhaal wachtwoord",
+        "ph_repeatPassword": "Herhaal wachtwoord",
+        "bt_create": "Een account instellen",
+        "dv_aleary": "Al een account?"
+    },
+    "validate": {
+        "vd_email": "Moet minimaal 8 tekens lang zijn",
+        "vd_password": "Mag niet langer zijn dan 32 tekens",
+        "vd_confirm": "Must not exceed 32 characters",
+        "vd_not_match": "Wachtwoorden komen niet overeen — Vul in beide velden hetzelfde wachtwoord in."
+    } 
 }

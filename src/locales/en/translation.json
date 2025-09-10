@@ -1,13 +1,23 @@
 { 
-  "lang": "Select platform language",
-  "auth": {
-    "lb_email": "Your email adress", 
-    "ph_email": "exemple@example.com",
-    "lb_login": "Login",
-    "ph_login": "Enter password",
-    "lb_password": "Enter password",
-    "ph_password": "Minimum 8 symbols",
-    "lb_repeatPassword": "Repeat password",
-    "ph_repeatPassword": "Repeat password"
-  }
+    "not_provided": "Translation not provided",
+    "lang": "Select platform language",
+    "auth": {
+        "tl_create": "Get started",
+        "lb_email": "Your email adress", 
+        "ph_email": "exemple@example.com",
+        "lb_login": "Login",
+        "ph_login": "Enter password",
+        "lb_password": "Enter password",
+        "ph_password": "Minimum 8 symbols",
+        "lb_repeatPassword": "Repeat password",
+        "ph_repeatPassword": "Repeat password",
+        "bt_create": "Set up an account",
+        "dv_aleary": "Already a member ?"
+    },
+    "validate": {
+        "vd_email": "Please enter a valid email address",
+        "vd_password": "Must be at least 8 characters long",
+        "vd_confirm": "Must not exceed 32 characters",
+        "vd_not_match": "Passwords don’t match — Enter the same password in both fields"
+    } 
 }
