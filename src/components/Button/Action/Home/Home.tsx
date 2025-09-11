@@ -18,7 +18,7 @@ export function HomeActionButton() {
                 variant="default"
                 style={{ fontSize: 12.8, fontWeight: 700}}
                 >
-                    <IconHome size={16}/>
+                    <IconHome size={16} stroke={1.4}/>
                 </ActionIcon>
             </Popover.Target>
             <Popover.Dropdown style={{ pointerEvents: 'none'}}>

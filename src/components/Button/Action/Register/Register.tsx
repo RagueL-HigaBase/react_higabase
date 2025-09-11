@@ -18,7 +18,7 @@ export function RegisterActionButton() {
                 variant="default"
                 style={{ fontSize: 12.8, fontWeight: 700}}
                 >
-                    <IconUser size={16}/>
+                    <IconUser size={16} stroke={1.4} />
                 </ActionIcon>
             </Popover.Target>
             <Popover.Dropdown style={{ pointerEvents: 'none', alignContent: "center"}}>
