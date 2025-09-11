@@ -2,20 +2,20 @@ import { z } from "zod";
 
 
 export const validateRegister = z.object({
-    hbEmail: z.email("auth.vd_email"),
+    hbEmail: z.email("validate.vd_email"),
     hbPassword: z
         .string()
         .trim()
-        .min(8,"auth.vd_password")
-        .max(32, "auth.vd_confirm"),
-    hbConfirmPassword: z
+        .min(8,"validate.auth.password_not_shorter")
+        .max(32, "validate.auth.password_not_longer"),
+    hbConfirm: z
         .string()
         .trim()
-        .min(8, "auth.vd_password")
-        .max(32, "auth.vd_confirm"),
-    }).refine((v) => v.hbPassword === v.hbConfirmPassword, {
+        .min(8, "validate.auth.password_not_shorter")
+        .max(32, "validate.auth.password_not_longer"),
+    }).refine((v) => v.hbPassword === v.hbConfirm, {
     path: ["hbConfirmPassword"],
-    message: "auth.vd_not_match",
+    message: "validate.auth.not_match",
 });
 
 export type ValidateRegister = z.infer<typeof validateRegister>

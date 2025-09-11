@@ -1,23 +1,66 @@
-{ 
-    "not_provided": "Vertaling niet beschikbaar",
-    "lang": "Kies platformtaal",
+{
+    "default": {
+        "messages": {
+            "translaion": "Vertaling niet beschikbaar"
+        },
+        "select": {
+            "language": "Selecteer de platformtaal"
+        }
+    },
+    "error": {
+        "pages": {
+            "404": "Maar geen zorgen! Onze struisvogel speurt overal terwijl jij veilig wacht.",
+            "403": "Stop! Je probeert een domein te betreden dat voor jou niet is toegestaan.",
+            "500": "Maar geen zorgen! Onze kat is hier om wat muziek voor je te spelen."
+        },
+        "title": {
+            "not_exist": "Pagina niet gevonden.",
+            "forbidden": "Toegang geweigerd!",
+            "unknown": "Er is een onbekende fout opgetreden."
+        },
+        "divider": {
+            "go_home": "Terug naar de startpagina" 
+        }
+    },
     "auth": {
-        "tl_create": "Aan de slag",
-        "lb_email": "Uw e-mailadres", 
-        "ph_email": "voorbeeld@voorbeeld.com",
-        "lb_login": "Inloggen",
-        "ph_login": "Voer login in",
-        "lb_password": "Wachtwoord",
-        "ph_password": "Minimaal 8 tekens",
-        "lb_repeatPassword": "Herhaal wachtwoord",
-        "ph_repeatPassword": "Herhaal wachtwoord",
-        "bt_create": "Een account instellen",
-        "dv_aleary": "Al een account?"
+        "title": {
+            "aleary_member": "Heb je al een account?",
+            "get_started": "Aan de slag",
+            "sing_in": "Meld je aan bij je account"
+        },
+        "placeholder": {
+            "email": "exemple@example.com",
+            "password": "Voer wachtwoord in",
+            "confirm": "Bevestig wachtwoord"
+        },
+        "label": {
+            "email": "Je e-mailadres",
+            "password": "Voer wachtwoord in",
+            "confirm": "Bevestig wachtwoord"
+        },
+        "button": {
+            "set_up": "Account aanmaken",
+            "continue_board": "Doorgaan naar dashboard"
+        },
+        "divider": {
+            "create_account": "Account nu aanmaken",
+            "login_account": "Toegang tot je account"
+        }
+    },
+    "button": {
+        "popover": {
+        "login_action": "Heb je al een account? Log dan in. Zo niet, maak er een aan op de inlogpagina en ga daarna verder.",
+        "home_action": "Van daaruit kun je opnieuw beginnen, belangrijke secties vinden of naar je dashboard en helpcentrum gaan.",
+        "resend_action": "Klik om een nieuwe e-mail met je verificatielink te versturen. Komt hij niet binnen een minuut aan? Controleer je map Ongewenste e-mail.",
+        "register_action": "Klik om je account aan te maken en te beginnen. Het kost maar een moment — voer je e-mail en wachtwoord in, dan kun je verder."
+        }
     },
     "validate": {
-        "vd_email": "Moet minimaal 8 tekens lang zijn",
-        "vd_password": "Mag niet langer zijn dan 32 tekens",
-        "vd_confirm": "Must not exceed 32 characters",
-        "vd_not_match": "Wachtwoorden komen niet overeen — Vul in beide velden hetzelfde wachtwoord in."
-    } 
+        "auth": {
+            "email": "Vul een geldig e-mailadres in",
+            "password_not_shorter": "Moet minstens 8 tekens lang zijn",
+            "password_not_longer": "Mag niet langer zijn dan 32 tekens",
+            "not_match": "Wachtwoorden komen niet overeen — voer in beide velden hetzelfde wachtwoord in"
+        }
+    }
 }

@@ -1,23 +1,65 @@
-{ 
-    "not_provided": "Vertimas nepateiktas",
-    "lang": "Pasirinkite platformos kalbą",
+{
+    "default": {
+        "messages": {
+            "translaion": "Vertimas nepateiktas"
+        },
+        "select": {
+            "language": "Pasirinkite platformos kalbą"
+        }
+    },"error": {
+        "pages": {
+            "404": "Bet nesijaudinkite! Mūsų stručas ieško visur, kol jūs saugiai laukiate.",
+            "403": "Sustok! Bandai patekti į sritį, į kurią tau neleidžiama.",
+            "500": "Bet nesijaudinkite! Mūsų katinas čia, kad jums pagrotų šiek tiek muzikos."
+        },
+        "title": {
+            "not_exist": "Puslapis nerastas.",
+            "forbidden": "Prieiga neleidžiama!",
+            "unknown": "Įvyko nežinoma klaida."
+        },
+        "divider": {
+            "go_home": "Atgal į pagrindinį puslapį" 
+        }
+    },
     "auth": {
-        "tl_create": "Pradėti",
-        "lb_email": "Jūsų el. pašto adresas", 
-        "ph_email": "pavyzdys@pavyzdys.lt",
-        "lb_login": "Prisijungti",
-        "ph_login": "Įveskite slaptažodį",
-        "lb_password": "Slaptažodis",
-        "ph_password": "Mažiausiai 8 simboliai",
-        "lb_repeatPassword": "Pakartokite slaptažodį",
-        "ph_repeatPassword": "Pakartokite slaptažodį",
-        "bt_create": "Sukurti paskyrą",
-        "dv_aleary": "Jau turite paskyrą?"
+        "title": {
+            "aleary_member": "Jau esate narys?",
+            "get_started": "Pradėti",
+            "sing_in": "Prisijunkite prie paskyros"
+        },
+        "placeholder": {
+            "email": "exemple@example.com",
+            "password": "Įveskite slaptažodį",
+            "confirm": "Patvirtinkite slaptažodį"
+        },
+        "label": {
+            "email": "Jūsų el. pašto adresas",
+            "password": "Įveskite slaptažodį",
+            "confirm": "Patvirtinkite slaptažodį"
+        },
+        "button": {
+            "set_up": "Sukurti paskyrą",
+            "continue_board": "Tęsti į valdymo skydą"
+        },
+        "divider": {
+            "create_account": "Sukurti paskyrą dabar",
+            "login_account": "Prisijungti prie paskyros"
+        }
+    },
+    "button": {
+        "popover": {
+            "login_action": "Jau turite paskyrą? Prisijunkite. Jei ne, ją galite sukurti prisijungimo ekrane ir tuomet tęsti.",
+            "home_action": "Iš ten galite pradėti iš naujo, rasti pagrindinius skyrius arba pereiti į valdymo skydą ir pagalbos centrą.",
+            "resend_action": "Spustelėkite, kad išsiųstumėte naują el. laišką su patvirtinimo nuoroda. Jei per minutę negausite, patikrinkite šlamšto aplanką.",
+            "register_action": "Spustelėkite, kad sukurtumėte paskyrą ir pradėtumėte. Tai užtruks tik akimirką — įveskite el. paštą ir slaptažodį, tuomet galėsite tęsti."
+        }
     },
     "validate": {
-        "vd_email": "Įveskite galiojantį el. pašto adresą",
-        "vd_password": "Slaptažodis turi būti bent 8 simbolių",
-        "vd_confirm": "Negali viršyti 32 simbolių",
-        "vd_not_match": "Slaptažodžiai nesutampa — įveskite tą patį slaptažodį abiejuose laukuose"
-    } 
+        "auth": {
+            "email": "Įveskite galiojantį el. pašto adresą",
+            "password_not_shorter": "Turi būti bent 8 simboliai",
+            "password_not_longer": "Negali viršyti 32 simbolių",
+            "not_match": "Slaptažodžiai nesutampa — įveskite tą patį abiejuose laukuose"
+        }
+    }
 }

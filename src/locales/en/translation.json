@@ -1,23 +1,65 @@
-{ 
-    "not_provided": "Translation not provided",
-    "lang": "Select platform language",
+{   "default": {
+        "messages": {
+            "translaion": "Translation not provided"
+        },
+        "select": {
+            "language": "Select platform language"
+        }
+    },
+    "error": {
+        "pages": {
+            "404": "But no worries! Our ostrich is looking everywhere while you wait safely.",
+            "403": "Halt! Thou art endeavouring to trespass upon a realm not granted.",
+            "500": "But relax! Our cat is here to play you some music."           
+        },
+        "title": {
+            "not_exist": "Page not found.",
+            "forbidden": "Access Forbidden!",
+            "unknown": "Unknow error."
+        },
+        "divider": {
+            "go_home": "Back to homepage" 
+        }
+    },
     "auth": {
-        "tl_create": "Get started",
-        "lb_email": "Your email adress", 
-        "ph_email": "exemple@example.com",
-        "lb_login": "Login",
-        "ph_login": "Enter password",
-        "lb_password": "Enter password",
-        "ph_password": "Minimum 8 symbols",
-        "lb_repeatPassword": "Repeat password",
-        "ph_repeatPassword": "Repeat password",
-        "bt_create": "Set up an account",
-        "dv_aleary": "Already a member ?"
+        "title": {
+            "get_started": "Get started",
+            "sing_in": "Sign in to account"
+        },
+        "placeholder": {
+            "email": "exemple@example.com",
+            "password": "Enter password",
+            "confirm": "Confirm password"
+        },
+        "label": {
+            "email": "Your email adress", 
+            "password": "Enter password",
+            "confirm": "Confirm password"
+        },
+        "button": {
+            "set_up": "Set up an account",
+            "continue_board": "Continue to dashboard"
+        },
+        "divider": {
+            "create_account": "Create account now",
+            "login_account": "Access account"
+        }
+
+    },
+    "button": {
+        "popover": {
+            "login_action": "Already have an account, sign in. If you don’t, you can create one from the login screen and then continue.",
+            "home_action": "From there you can start fresh, find key sections, or navigate to your dashboard and help center.",
+            "resend_action": "Click to send a new email with your verification link. If it doesn’t arrive within a minute, check your spam.",
+            "register_action": "Click to create your account and get started. It takes just a moment—enter your email and a password, then you’re in."
+        }
     },
     "validate": {
-        "vd_email": "Please enter a valid email address",
-        "vd_password": "Must be at least 8 characters long",
-        "vd_confirm": "Must not exceed 32 characters",
-        "vd_not_match": "Passwords don’t match — Enter the same password in both fields"
+        "auth": {
+            "email": "Please enter a valid email address",
+            "password_not_shorter": "Must be at least 8 characters long",
+            "password_not_longer": "Must not exceed 32 characters",
+            "not_match": "Passwords don’t match — Enter the same password in both fields"
+        }
     } 
 }

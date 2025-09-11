@@ -13,7 +13,7 @@ export function ToggleScheme() {
         size="md"
         aria-label="Toggle color scheme"
         >
-        {computedColorScheme === 'light' ? <IconSun stroke={1} size={16} /> : <IconMoon stroke={1} size={16}/>}
+        {computedColorScheme === 'light' ? <IconSun stroke={1.5} size={16} /> : <IconMoon stroke={1.5} size={16}/>}
         </ActionIcon>
     );
 }

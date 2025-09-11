@@ -1,23 +1,66 @@
-{ 
-    "not_provided": "Tulkojums nav pieejams",
-    "lang": "Izvēlieties platformas valodu",
+{
+    "default": {
+        "messages": {
+            "translaion": "Tulkojums nav pieejams"
+        },
+        "select": {
+            "language": "Izvēlieties platformas valodu"
+        }
+    },
+    "error": {
+        "pages": {
+            "404": "Bet neuztraucieties! Mūsu strauss meklē visur, kamēr jūs droši gaidāt.",
+            "403": "Apturies! Tu mēģini iekļūt apgabalā, uz kuru tev nav tiesību.",
+            "500": "Bet neuztraucieties! Mūsu kaķis ir šeit, lai jums nospēlētu nedaudz mūzikas"
+        },
+        "title": {
+            "not_exist": "Lapa nav atrasta.",
+            "forbidden": "Piekļuve nav atļauta!",
+            "unknown": "Radās nezināma kļūda."
+        },
+        "divider": {
+            "go_home": "Atpakaļ uz sākumlapu" 
+        }
+    },
     "auth": {
-        "tl_create": "Sākt",
-        "lb_email": "Jūsu e-pasta adrese", 
-        "ph_email": "piemers@piemers.lv",
-        "lb_login": "Pieteikšanās",
-        "ph_login": "Ievadiet paroli",
-        "lb_password": "Parole",
-        "ph_password": "Vismaz 8 simboli",
-        "lb_repeatPassword": "Atkārtojiet paroli",
-        "ph_repeatPassword": "Atkārtojiet paroli",
-        "bt_create": "Izveidot kontu",
-        "dv_aleary": "Jau esat reģistrējies?"
+        "title": {
+            "aleary_member": "Jau esat lietotājs?",
+            "get_started": "Sākt",
+            "sing_in": "Pierakstieties kontā"
+        },
+        "placeholder": {
+            "email": "exemple@example.com",
+            "password": "Ievadiet paroli",
+            "confirm": "Apstipriniet paroli"
+        },
+        "label": {
+            "email": "Jūsu e-pasta adrese",
+            "password": "Ievadiet paroli",
+            "confirm": "Apstipriniet paroli"
+        },
+            "button": {
+            "set_up": "Izveidot kontu",
+            "continue_board": "Pāriet uz informācijas paneli"
+        },
+        "divider": {
+            "create_account": "Izveidot kontu tagad",
+            "login_account": "Piekļūt kontam"
+        }
+    },
+    "button": {
+        "popover": {
+            "login_action": "Jums jau ir konts? Pierakstieties. Ja nav, to varat izveidot pieteikšanās lapā un turpināt.",
+            "home_action": "No turienes varat sākt no jauna, atrast galvenās sadaļas vai doties uz informācijas paneli un palīdzības centru.",
+            "resend_action": "Noklikšķiniet, lai nosūtītu jaunu e-pastu ar apstiprinājuma saiti. Ja tas minūtes laikā neatnāk, pārbaudiet nevēlamo pastu.",
+            "register_action": "Noklikšķiniet, lai izveidotu kontu un sāktu. Tas aizņems tikai mirkli — ievadiet e-pastu un paroli, pēc tam varēsiet turpināt."
+        }
     },
     "validate": {
-        "vd_email": "Lūdzu, ievadiet derīgu e-pasta adresi",
-        "vd_password": "Parolei jābūt vismaz 8 rakstzīmēm",
-        "vd_confirm": "Nedrīkst pārsniegt 32 rakstzīmes",
-        "vd_not_match": "Paroles nesakrīt — ievadiet vienu un to pašu paroli abos laukos"
-    } 
+        "auth": {
+            "email": "Lūdzu, ievadiet derīgu e-pasta adresi",
+            "password_not_shorter": "Parolei jābūt vismaz 8 rakstzīmēm",
+            "password_not_longer": "Parole nedrīkst pārsniegt 32 rakstzīmes",
+            "not_match": "Paroles nesakrīt — ievadiet vienu un to pašu paroli abos laukos"
+        }
+    }
 }

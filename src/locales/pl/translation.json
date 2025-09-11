@@ -1,23 +1,66 @@
-{ 
-    "not_provided": "Tłumaczenie niedostępne",
-    "lang": "Wybierz język platformy",
+{
+    "default": {
+        "messages": {
+            "translaion": "Brak tłumaczenia"
+        },
+        "select": {
+            "language": "Wybierz język platformy"
+        }
+    },
+    "error": {
+        "pages": {
+            "404": "Ale bez obaw! Nasz struś szuka wszędzie, podczas gdy Ty bezpiecznie czekasz.",
+            "403": "Zatrzymaj się! Próbujesz wejść do obszaru, do którego nie masz uprawnień.",
+            "500": "Ale bez obaw! Nasz kot jest tutaj, żeby zagrać dla ciebie trochę muzyki"
+        },
+        "title": {
+            "not_exist": "Nie znaleziono strony.",
+            "forbidden": "Odmowa dostępu!",
+            "unknown": "Wystąpił nieznany błąd."
+        },
+        "divider": {
+            "go_home": "Wróć do strony głównej" 
+        }
+    },
     "auth": {
-        "tl_create": "Rozpocznij",
-        "lb_email": "Twój adres e-mail", 
-        "ph_email": "przyklad@przyklad.pl",
-        "lb_login": "Zaloguj się",
-        "ph_login": "Wpisz hasło",
-        "lb_password": "Hasło",
-        "ph_password": "Minimum 8 znaków",
-        "lb_repeatPassword": "Powtórz hasło",
-        "ph_repeatPassword": "Powtórz hasło",
-        "bt_create": "Utwórz konto",
-        "dv_aleary": "Masz już konto?"
+        "title": {
+            "aleary_member": "Masz już konto?",
+            "get_started": "Rozpocznij",
+            "sing_in": "Zaloguj się na konto"
+        },
+        "placeholder": {
+            "email": "exemple@example.com",
+            "password": "Wprowadź hasło",
+            "confirm": "Potwierdź hasło"
+        },
+        "label": {
+            "email": "Twój adres e-mail",
+            "password": "Wprowadź hasło",
+            "confirm": "Potwierdź hasło"
+        },
+        "button": {
+            "set_up": "Utwórz konto",
+            "continue_board": "Przejdź do panelu"
+        },
+        "divider": {
+            "create_account": "Utwórz konto teraz",
+            "login_account": "Uzyskaj dostęp do konta"
+        }
+    },
+    "button": {
+        "popover": {
+        "login_action": "Masz już konto? Zaloguj się. Jeśli nie, możesz je utworzyć na stronie logowania, a następnie kontynuować.",
+        "home_action": "Stamtąd możesz zacząć od nowa, znaleźć kluczowe sekcje lub przejść do panelu i centrum pomocy.",
+        "resend_action": "Kliknij, aby wysłać nową wiadomość z linkiem weryfikacyjnym. Jeśli nie dotrze w ciągu minuty, sprawdź folder spamu.",
+        "register_action": "Kliknij, aby utworzyć konto i zacząć. To zajmie chwilę — podaj e-mail i hasło, a potem kontynuuj."
+        }
     },
     "validate": {
-        "vd_email": "Podaj prawidłowy adres e-mail",
-        "vd_password": "Hasło musi mieć co najmniej 8 znaków",
-        "vd_confirm": "Nie może przekraczać 32 znaków",
-        "vd_not_match": "Hasła nie są takie same — wpisz to samo hasło w obu polach"
-    } 
+        "auth": {
+            "email": "Podaj poprawny adres e-mail",
+            "password_not_shorter": "Hasło musi mieć co najmniej 8 znaków",
+            "password_not_longer": "Hasło nie może mieć więcej niż 32 znaki",
+            "not_match": "Hasła nie są takie same — wpisz to samo hasło w obu polach"
+        }
+    }
 }
