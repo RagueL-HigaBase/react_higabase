@@ -43,7 +43,7 @@ export function RegisterPage() {
     return (
         <>
         <Center h={"100vh"}>
-        <form style={{ width: "100%"}} onSubmit={form.onSubmit((val) => console.log(val))}>
+        <form style={{ width: "100%"}}>
         <Stack w={"100%"} maw={500} px={"xl"} gap={"xs"} mx="auto" align="center">
             <HigabaseLogo/>
             <Title order={5}>{t("auth.title.get_started")}</Title>
