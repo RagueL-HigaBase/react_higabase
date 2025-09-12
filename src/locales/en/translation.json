@@ -62,5 +62,18 @@
             "password_not_longer": "Must not exceed 32 characters",
             "not_match": "Passwords don’t match — Enter the same password in both fields"
         }
-    } 
+    },
+    "server": {
+        "error": {
+            "is_exsist": "An account with this email address is already registered. If you forgot your password, please reset it. Otherwise, try logging in with your existing account."
+        },
+        "prisma": {
+            "P2002": "A record with this value already exists (e.g. email is taken).Please contact your system administrator!",
+            "P2025": "The requested record was not found. Please contact your system administrator!",
+            "P2003": "Operation failed due to a foreign key constraint. Please contact your system administrator!",
+            "P2000": "The provided value is too long for this field. Please contact your system administrator!",
+            "P2001": "The record you are looking for does not exist. Please contact your system administrator!",
+            "DEFAULT": "Please contact your system administrator!"
+        }
+    }
 }
