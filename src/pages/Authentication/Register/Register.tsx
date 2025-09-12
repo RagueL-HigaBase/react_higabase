@@ -12,11 +12,14 @@ import { HigabaseLogo } from "../../../components/Logo/Logo";
 import { HomeActionButton } from "../../../components/Button/Action/Home/Home";
 import { LoginActionButton } from "../../../components/Button/Action/Login/Login";
 import { ResendActionButton } from "../../../components/Button/Action/Resend/Resend";
+import { buildApiProtocol } from "../../../store/api";
+import { ApiCallRegulations } from "../../../store/regulation/regulation";
 
 export function RegisterPage() {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [confirm, setConfirm] = useState('');
+    const [submitting, setSubmitting] = useState(false);
  
     const { t } = useTranslation();
     const form = useForm({
@@ -31,19 +34,31 @@ export function RegisterPage() {
         validateInputOnChange: true,
         clearInputErrorOnChange: true,
     })
+    const onSubmit = form.onSubmit( async (value) => {
+        setSubmitting(true);
+        await buildApiProtocol(ApiCallRegulations.REGISTRATION, {
+            hbEmail: value.hbEmail,
+            hbPassword: value.hbPassword,
+            hbConfirm: value.hbConfirm
+        });
+        form.reset();
+        // form.clearErrors();
+        // form.resetTouched();
+        setSubmitting(false);
+    });
     
     useEffect(() => {
         pageHeaders(t('auth.title.get_started'), t('auth.page_desc_register'), localePageHeader());
         const { hbEmail, hbPassword, hbConfirm} = form.errors;
         setEmail(typeof hbEmail === 'string' ? t(hbEmail) : '');
         setPass(typeof hbPassword === 'string' ? t(hbPassword) : '');
-        setConfirm(typeof hbConfirm === 'string' ? t(hbConfirm) : '')
+        setConfirm(typeof hbConfirm === 'string' ? t(hbConfirm) : '');
     } , [form.errors, t])
 
     return (
         <>
         <Center h={"100vh"}>
-        <form style={{ width: "100%"}}>
+        <form style={{ width: "100%"}} onSubmit={onSubmit}>
         <Stack w={"100%"} maw={500} px={"xl"} gap={"xs"} mx="auto" align="center">
             <HigabaseLogo/>
             <Title order={5}>{t("auth.title.get_started")}</Title>
@@ -55,7 +70,7 @@ export function RegisterPage() {
                 labelProps={{ style: {textTransform: "uppercase", fontSize: 10.24 } }}
                 placeholder={t("auth.placeholder.email")}
                 type="email"
-                w="100%" 
+                w={"100%"}
                 autoComplete="email"
                 key={form.key('hbEmail')} 
                 {...form.getInputProps('hbEmail')}
@@ -86,6 +101,7 @@ export function RegisterPage() {
                 error={confirm}
             />
             <Button
+                disabled={!form.isValid() || submitting}
                 type="submit"
                 m={'md'}
                 w={"100%"}

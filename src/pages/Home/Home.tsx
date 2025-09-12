@@ -10,10 +10,11 @@ export function HomePage() {
     const theme = useSafeMantineTheme();
     const isDark = useComputedColorScheme("light") === "dark";
     const { t } = useTranslation();
+
     useEffect(() => { 
         pageHeaders(t('auth.title.get_started'), t('auth.page_desc_register'), localePageHeader())
 
-    }, [t])
+    }, [t]);
     return (
         <Box style={{ 
             borderBottomStyle: "solid", 

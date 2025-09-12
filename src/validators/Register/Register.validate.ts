@@ -2,7 +2,7 @@ import { z } from "zod";
 
 
 export const validateRegister = z.object({
-    hbEmail: z.email("validate.vd_email"),
+    hbEmail: z.email("validate.auth.email"),
     hbPassword: z
         .string()
         .trim()
@@ -14,7 +14,7 @@ export const validateRegister = z.object({
         .min(8, "validate.auth.password_not_shorter")
         .max(32, "validate.auth.password_not_longer"),
     }).refine((v) => v.hbPassword === v.hbConfirm, {
-    path: ["hbConfirmPassword"],
+    path: ["hbConfirm"],
     message: "validate.auth.not_match",
 });
 

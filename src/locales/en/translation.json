@@ -24,7 +24,8 @@
     "auth": {
         "title": {
             "get_started": "Get started",
-            "sing_in": "Sign in to account"
+            "sing_in": "Sign in to account",
+            "resend": "Resend email"
         },
         "placeholder": {
             "email": "exemple@example.com",

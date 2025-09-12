@@ -7,7 +7,7 @@ export function MantineLanguageSelect() {
     const { t, i18n } = useTranslation();
     return (
         <Select
-            leftSection={<IconFlag size={16}/>}
+            leftSection={<IconFlag size={16} stroke={1.4}/>}
             label={t("default.select.language")}
             w={"100%"}
             labelProps={{ style: { textTransform: "uppercase", fontSize: 10.24}}}
