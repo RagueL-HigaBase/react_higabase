@@ -1,6 +1,6 @@
-import { Button, Center, Divider, Flex, PasswordInput, Stack, TextInput, Title } from "@mantine/core";
-import { useForm } from '@mantine/form';
 import { useTranslation } from "react-i18next";
+import { useForm } from '@mantine/form';
+import { Alert, Button, Center, Divider, Flex, Modal, PasswordInput, Stack, TextInput, Title } from "@mantine/core";
 import { IconPasswordUser, IconUser, IconUserCheck } from "@tabler/icons-react";
 import { ToggleScheme } from "../../../components/Styles/ToggleScheme/ToggleScheme";
 import { zod4Resolver } from "mantine-form-zod-resolver";
@@ -12,10 +12,14 @@ import { HigabaseLogo } from "../../../components/Logo/Logo";
 import { HomeActionButton } from "../../../components/Button/Action/Home/Home";
 import { LoginActionButton } from "../../../components/Button/Action/Login/Login";
 import { ResendActionButton } from "../../../components/Button/Action/Resend/Resend";
-import { buildApiProtocol } from "../../../store/api";
-import { ApiCallRegulations } from "../../../store/regulation/regulation";
+import { buildApiProtocol } from "../../../store/comunication/api";
+import { ApiCallRegulations, type DataBaseProtocol } from "../../../store/regulation/regulation";
+import { useDisclosure } from "@mantine/hooks";
+import type { ValidateRegister } from "../../../validators/Register/Register.validate";
 
 export function RegisterPage() {
+    const [modalMessage, setModalMessage] = useState('')
+    const [opened ,{ open, close }] = useDisclosure(false);
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [confirm, setConfirm] = useState('');
@@ -36,19 +40,27 @@ export function RegisterPage() {
     })
     const onSubmit = form.onSubmit( async (value) => {
         setSubmitting(true);
-        await buildApiProtocol(ApiCallRegulations.REGISTRATION, {
+
+        const res: DataBaseProtocol<ValidateRegister> = await buildApiProtocol(ApiCallRegulations.REGISTRATION, {
             hbEmail: value.hbEmail,
             hbPassword: value.hbPassword,
             hbConfirm: value.hbConfirm
         });
-        form.reset();
-        // form.clearErrors();
-        // form.resetTouched();
-        setSubmitting(false);
+
+        if (res.ok) {
+            form.reset();
+            setSubmitting(false)
+            console.log(res);
+        } else {
+            form.reset();
+            setModalMessage(t(`${res.message}`));
+            open()
+            setSubmitting(false)
+        }
     });
     
     useEffect(() => {
-        pageHeaders(t('auth.title.get_started'), t('auth.page_desc_register'), localePageHeader());
+        pageHeaders(t('auth.title.get_started'), t('pages.description.register'), localePageHeader());
         const { hbEmail, hbPassword, hbConfirm} = form.errors;
         setEmail(typeof hbEmail === 'string' ? t(hbEmail) : '');
         setPass(typeof hbPassword === 'string' ? t(hbPassword) : '');
@@ -57,6 +69,9 @@ export function RegisterPage() {
 
     return (
         <>
+        <Modal opened={opened} onClose={close} title="Inernal errro" >
+            <Alert variant="light" color="red">{modalMessage}</Alert>
+        </Modal>
         <Center h={"100vh"}>
         <form style={{ width: "100%"}} onSubmit={onSubmit}>
         <Stack w={"100%"} maw={500} px={"xl"} gap={"xs"} mx="auto" align="center">

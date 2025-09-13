@@ -6,6 +6,11 @@
             "language": "Select platform language"
         }
     },
+    "pages": {
+        "description" : {
+            "register": "Create an account in a few simple steps. Register with your email and password to access all features, manage your profile, and start using our services securely."
+        }
+    },
     "error": {
         "pages": {
             "404": "But no worries! Our ostrich is looking everywhere while you wait safely.",
@@ -64,16 +69,17 @@
         }
     },
     "server": {
-        "error": {
-            "is_exsist": "An account with this email address is already registered. If you forgot your password, please reset it. Otherwise, try logging in with your existing account."
-        },
         "prisma": {
-            "P2002": "A record with this value already exists (e.g. email is taken).Please contact your system administrator!",
-            "P2025": "The requested record was not found. Please contact your system administrator!",
-            "P2003": "Operation failed due to a foreign key constraint. Please contact your system administrator!",
-            "P2000": "The provided value is too long for this field. Please contact your system administrator!",
-            "P2001": "The record you are looking for does not exist. Please contact your system administrator!",
-            "DEFAULT": "Please contact your system administrator!"
+            "is_existing_user": "An account with this email already exists. Please log in with your credentials or reset your password if you cannot access your account."
+        },
+        "title": {
+            "register": "Inernal Errro"
+        },
+        "error": {
+            "message": "The server is not responding at the moment. Your request could not be completed. Please check your connection or try again later."
+        },
+        "zod": {
+            "message": "A rare server validation error occurred. In most cases, this issue requires immediate attention from our support team. Please contact support right away. support@higabase.com"
         }
     }
 }
