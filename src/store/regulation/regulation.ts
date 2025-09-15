@@ -8,9 +8,11 @@ export const ApiCallRegulations = {
         method: 'POST',
         endpoint: '/core/register',
     },
+    LOGIN: {
+        method: 'POST',
+        endpoint: '/core/login'
+    }
 } as const;
 
 export type ApiCallKey = keyof typeof ApiCallRegulations;
 export type ApiCallRegulation = typeof ApiCallRegulations[ApiCallKey];
-
-

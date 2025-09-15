@@ -6,11 +6,6 @@
             "language": "Select platform language"
         }
     },
-    "pages": {
-        "description" : {
-            "register": "Create an account in a few simple steps. Register with your email and password to access all features, manage your profile, and start using our services securely."
-        }
-    },
     "error": {
         "pages": {
             "404": "But no worries! Our ostrich is looking everywhere while you wait safely.",
@@ -30,7 +25,8 @@
         "title": {
             "get_started": "Get started",
             "sing_in": "Sign in to account",
-            "resend": "Resend email"
+            "resend": "Resend email",
+            "congrat": "Registration completed successfully"
         },
         "placeholder": {
             "email": "exemple@example.com",
@@ -49,6 +45,11 @@
         "divider": {
             "create_account": "Create account now",
             "login_account": "Access account"
+        },
+        "description" : {
+            "confirm": "Welcome aboard! Your account is set up. To unlock full access, verify your email. Look for our confirmation email in your inbox, click the link, and start exploring today.",
+            "register": "Create an account in a few simple steps. Register with your email and password to access all features, manage your profile, and start using our services securely.",
+            "sing_in": "Sign in to explore your dashboard, update your info, and stay connected."
         }
 
     },
@@ -70,7 +71,8 @@
     },
     "server": {
         "prisma": {
-            "is_existing_user": "An account with this email already exists. Please log in with your credentials or reset your password if you cannot access your account."
+            "is_existing_user": "An account with this email already exists. Please log in with your credentials or reset your password if you cannot access your account.",
+            "not_existing_user": "No account found with this email address. Please check for typos or sign up to create a new account."
         },
         "title": {
             "register": "Inernal Errro"

@@ -8,3 +8,5 @@ export const validateLogin = z.object({
         .min(8,"validate.auth.password_not_shorter")
         .max(32, "validate.auth.password_not_longer")
 })
+
+export type ValidateLogin = z.infer<typeof validateLogin>;

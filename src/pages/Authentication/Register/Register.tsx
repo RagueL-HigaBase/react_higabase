@@ -16,6 +16,8 @@ import { buildApiProtocol } from "../../../store/comunication/api";
 import { ApiCallRegulations, type DataBaseProtocol } from "../../../store/regulation/regulation";
 import { useDisclosure } from "@mantine/hooks";
 import type { ValidateRegister } from "../../../validators/Register/Register.validate";
+import { useNavigate } from "react-router-dom";
+
 
 export function RegisterPage() {
     const [modalMessage, setModalMessage] = useState('')
@@ -24,6 +26,7 @@ export function RegisterPage() {
     const [pass, setPass] = useState('');
     const [confirm, setConfirm] = useState('');
     const [submitting, setSubmitting] = useState(false);
+    const navigate = useNavigate();
  
     const { t } = useTranslation();
     const form = useForm({
@@ -37,7 +40,8 @@ export function RegisterPage() {
         validateInputOnBlur: true,
         validateInputOnChange: true,
         clearInputErrorOnChange: true,
-    })
+    });
+
     const onSubmit = form.onSubmit( async (value) => {
         setSubmitting(true);
 
@@ -48,19 +52,17 @@ export function RegisterPage() {
         });
 
         if (res.ok) {
-            form.reset();
-            setSubmitting(false)
-            console.log(res);
+            navigate("/congrat", { replace: true ,state: { hbEmail: value.hbEmail }});
         } else {
             form.reset();
             setModalMessage(t(`${res.message}`));
-            open()
+            open();
             setSubmitting(false)
         }
     });
     
     useEffect(() => {
-        pageHeaders(t('auth.title.get_started'), t('pages.description.register'), localePageHeader());
+        pageHeaders(t('auth.title.get_started'), t('auth.description.register'), localePageHeader());
         const { hbEmail, hbPassword, hbConfirm} = form.errors;
         setEmail(typeof hbEmail === 'string' ? t(hbEmail) : '');
         setPass(typeof hbPassword === 'string' ? t(hbPassword) : '');

@@ -6,6 +6,7 @@ export const validateRegister = z.object({
     hbPassword: z
         .string()
         .trim()
+        .toLowerCase()
         .min(8,"validate.auth.password_not_shorter")
         .max(32, "validate.auth.password_not_longer"),
     hbConfirm: z

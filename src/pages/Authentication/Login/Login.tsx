@@ -1,4 +1,4 @@
-import { Button, Center, Divider, Flex, PasswordInput, Stack, TextInput, Title } from "@mantine/core";
+import { Alert, Button, Center, Divider, Flex, Modal, PasswordInput, Stack, TextInput, Title } from "@mantine/core";
 import { useForm } from '@mantine/form';
 import { useTranslation } from "react-i18next";
 import { IconArrowRight, IconPasswordUser, IconUser } from "@tabler/icons-react";
@@ -12,35 +12,69 @@ import { HigabaseLogo } from "../../../components/Logo/Logo";
 import { HomeActionButton } from "../../../components/Button/Action/Home/Home";
 import { ResendActionButton } from "../../../components/Button/Action/Resend/Resend";
 import { RegisterActionButton } from "../../../components/Button/Action/Register/Register";
+import { ApiCallRegulations, type DataBaseProtocol } from "../../../store/regulation/regulation";
+import { buildApiProtocol } from "../../../store/comunication/api";
+import { useDisclosure } from "@mantine/hooks";
+import type { TokenRegulation } from "../../../store/regulation/token.regulation";
+// import { useNavigate } from "react-router-dom";
 
 export function LoginPage() {
+    const [modalMessage, setModalMessage] = useState('')
+    const [opened, { open, close}] = useDisclosure(false);
+    const [submitting, setSubmitting] = useState(false)
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    // const navigate = useNavigate()
 
     const { t } = useTranslation();
     const form = useForm({
+        mode: "uncontrolled",
         initialValues: {
             hbEmail: "",
             hbPassword: "",
-            hbConfirmPassword: "",
         },
         validate: zod4Resolver(validateLogin),
         validateInputOnBlur: true,
         validateInputOnChange: true,
         clearInputErrorOnChange: true
 
-    })
+    });
+    const onSubmit = form.onSubmit( async (value) => {
+        setSubmitting(true);
+        const res: DataBaseProtocol<TokenRegulation> = await buildApiProtocol(ApiCallRegulations.LOGIN, {
+            hbEmail: value.hbEmail,
+            hbPassword: value.hbPassword,
+        });
+        console.log(res)
+        if (res.ok) {
+            if(typeof res.data === 'string') {
+                localStorage.setItem("higaToken", res.data)
+                const token = localStorage.getItem("higaToken");
+                console.log(token)
+            }
+        } else {
+            form.reset();
+            setModalMessage(t(res.message));
+            open();
+            setSubmitting(false);
+        }
+    });
+
     useEffect(() => {
-        pageHeaders(t('auth.title.sing_in'), t('auth.page_desc_register'), localePageHeader());
+        pageHeaders(t('auth.title.sing_in'), t('auth.description.sing_in'), localePageHeader());
         const { hbEmail, hbPassword} = form.errors;
         setEmail(typeof hbEmail === 'string' ? t(hbEmail): '')
         setPass(typeof hbPassword === 'string' ? t(hbPassword) : '')
     }, [form.errors, t]);
+ 
 
     return (
         <>
+        <Modal opened={opened} onClose={close} title="Inernal errro" >
+            <Alert variant="light" color="red">{modalMessage}</Alert>
+        </Modal>
         <Center h={"100vh"}>
-        <form style={{ width: "100%"}} onSubmit={form.onSubmit(val => console.log(val))}>
+        <form style={{ width: "100%"}} onSubmit={onSubmit}>
         <Stack w={"100%"} maw={500} px={"xl"} gap={"xs"} mx="auto" align="center">
             <HigabaseLogo/>
             <Title order={5}>{t("auth.title.sing_in")}</Title>
@@ -71,6 +105,8 @@ export function LoginPage() {
                 error={pass}
             />
             <Button
+                disabled={!form.isValid() || submitting}
+                type="submit"
                 m={'md'}
                 w={"100%"}
                 variant="light"
