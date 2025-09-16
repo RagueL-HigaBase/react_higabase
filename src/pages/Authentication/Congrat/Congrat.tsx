@@ -37,7 +37,7 @@ export function CongratPage() {
                 <Title order={5}>{t("auth.title.congrat") }</Title>
                 <Divider w={"100%"} label={<ToggleScheme/>}></Divider>
                 <Image h={"auto"} src={illuSrc} alt=" 404-illustration"/>
-                <Title ta={"center"} order={5} c={"blue.6"}>{t(email)}</Title>
+                <Title ta={"center"} order={5} c={"blue.6"}>{email}</Title>
                 <Title ta={"center"} order={6}>{t("auth.description.confirm")}</Title>
                 <Divider 
                 w={"100%"}

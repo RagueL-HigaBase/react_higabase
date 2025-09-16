@@ -1,4 +1,3 @@
 export type TokenRegulation = { 
-    ok: true,
-    data: string
+    ok: true
 }

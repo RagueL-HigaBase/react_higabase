@@ -16,7 +16,8 @@ import { ApiCallRegulations, type DataBaseProtocol } from "../../../store/regula
 import { buildApiProtocol } from "../../../store/comunication/api";
 import { useDisclosure } from "@mantine/hooks";
 import type { TokenRegulation } from "../../../store/regulation/token.regulation";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import type { TokenAnalizer } from "../../../store/regulation/resent.regulation";
 
 export function LoginPage() {
     const [modalMessage, setModalMessage] = useState('')
@@ -24,7 +25,7 @@ export function LoginPage() {
     const [submitting, setSubmitting] = useState(false)
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const { t } = useTranslation();
     const form = useForm({
@@ -45,13 +46,8 @@ export function LoginPage() {
             hbEmail: value.hbEmail,
             hbPassword: value.hbPassword,
         });
-        console.log(res)
         if (res.ok) {
-            if(typeof res.data === 'string') {
-                localStorage.setItem("higaToken", res.data)
-                const token = localStorage.getItem("higaToken");
-                console.log(token)
-            }
+            navigate('/dashboard')
         } else {
             form.reset();
             setModalMessage(t(res.message));
@@ -59,6 +55,17 @@ export function LoginPage() {
             setSubmitting(false);
         }
     });
+    useEffect(() => {
+        let once = false;               
+        (async () => {
+            if (once) return; 
+            once = true;
+            const res = await buildApiProtocol<TokenAnalizer>(ApiCallRegulations.GUARD);
+            if (res.ok) {
+            navigate('/dashboard', { replace: true });
+            }
+        })();
+    }, [navigate]);
 
     useEffect(() => {
         pageHeaders(t('auth.title.sing_in'), t('auth.description.sing_in'), localePageHeader());

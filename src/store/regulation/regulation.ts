@@ -11,7 +11,12 @@ export const ApiCallRegulations = {
     LOGIN: {
         method: 'POST',
         endpoint: '/core/login'
+    },
+    GUARD: {
+        method: 'POST',
+        endpoint: '/core/guard'
     }
+
 } as const;
 
 export type ApiCallKey = keyof typeof ApiCallRegulations;
