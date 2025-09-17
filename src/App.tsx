@@ -7,6 +7,8 @@ import { Error500 } from "./pages/Error/500/Error500"
 import { DashboardPage } from "./pages/Protected/Dashboard/Dashboard"
 import { CallOnEnter } from "./pages/Authentication/Provider/auth.provider"
 import { AppLayout } from "./pages/Protected/Layout/Layout"
+import { ProfilePage } from "./pages/Protected/Profile/Profile"
+import { Error403 } from "./pages/Error/403/Error403"
 
 function App() {
 
@@ -21,8 +23,11 @@ return (
             <Route element={<AppLayout/>}>
                 <Route path="/" element={<DashboardPage/>}/>    
                 <Route path="/dashboard" element={<DashboardPage/>}/>
+                <Route path="/profile" element={<ProfilePage/>}/>
             </Route>
         </Route>
+        <Route path="/400" element={<Error500/>}/>
+        <Route path="/403" element={<Error403/>} />
         <Route path="*" element={<Error500/>} />
     </Routes>
     </>

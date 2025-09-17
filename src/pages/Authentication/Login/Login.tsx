@@ -53,7 +53,8 @@ export function LoginPage() {
             setModalMessage(t(res.message));
             open();
             setSubmitting(false);
-        }
+        };
+        console.log(res)
     });
     useEffect(() => {
         let once = false;               
@@ -77,7 +78,7 @@ export function LoginPage() {
 
     return (
         <>
-        <Modal opened={opened} onClose={close} title="Inernal errro" >
+        <Modal opened={opened} onClose={close} title={`${t("auth.modal.err_not_compleeted")}`} >
             <Alert variant="light" color="red">{modalMessage}</Alert>
         </Modal>
         <Center h={"100vh"}>

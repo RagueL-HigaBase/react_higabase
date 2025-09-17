@@ -1,9 +1,17 @@
 export type ProtocolError = { ok: false, message: string };
 export type ProtocolSuccess<T> = { ok: true, data: T}
-
 export type DataBaseProtocol<T> = ProtocolSuccess<T> | ProtocolError;
 
-export const ApiCallRegulations = {
+export const ApiMethods  = { 
+    GET: "GET",
+    POST: "POST",
+    PUT: "PUT",
+    DELETE: "DELETE",
+    OPTIONS: "OPTIONS",
+    PATCH: "PATCH"
+} 
+
+export const ApiCallRegulations  = {
     REGISTRATION: {
         method: 'POST',
         endpoint: '/core/register',
@@ -15,6 +23,10 @@ export const ApiCallRegulations = {
     GUARD: {
         method: 'POST',
         endpoint: '/core/guard'
+    },
+    IDENTITY: {
+        method: 'POST',
+        endpoint: '/core/identity'
     }
 
 } as const;

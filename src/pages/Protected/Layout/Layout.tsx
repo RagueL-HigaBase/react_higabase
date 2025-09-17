@@ -1,13 +1,16 @@
-import { AppShell, Avatar, Flex, Image, Text, UnstyledButton } from '@mantine/core';
-import { Outlet } from 'react-router';
+import { AppShell, Flex, Image, Text } from '@mantine/core';
+import { Outlet} from 'react-router';
 import { NavbarMinimal } from '../Navigation/Navigation';
+import { MenuUser } from '../../../components/Menu/Menu';
+import "./Layout.css"
+import { ToggleScheme } from '../../../components/Styles/ToggleScheme/ToggleScheme';
+
+
 
 export function AppLayout() {
-    // const [opened, { toggle }] = useDisclosure();
-
     return (
         <AppShell
-        padding="md"
+        padding="xl"
         header={{ height: 60 }}
         navbar={{
             width: 80,
@@ -16,11 +19,10 @@ export function AppLayout() {
         >
         <AppShell.Header>
             <Flex justify={"space-between"} align={"center"} h={"100%"} p={25}>
-                <Image w={32} src="./logo2.png" alt="Logo" draggable={false} />
+                <Image w={28} src="./logo2.png" alt="Logo" draggable={false} />
                 <Flex gap={"md"} align={"center"}>
-                    <UnstyledButton>
-                        <Avatar color='blue' radius={"md"} size={32} ></Avatar>
-                    </UnstyledButton>
+                    <MenuUser/>
+                    <ToggleScheme/>
                 </Flex>
             </Flex>
         </AppShell.Header>
@@ -29,7 +31,7 @@ export function AppLayout() {
             <NavbarMinimal/>
         </AppShell.Navbar>
 
-        <AppShell.Main>
+        <AppShell.Main className='outlet'>
                 <Outlet/>
         </AppShell.Main>
         <AppShell.Footer>
