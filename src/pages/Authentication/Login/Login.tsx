@@ -1,4 +1,4 @@
-import { Alert, Button, Center, Divider, Flex, Modal, PasswordInput, Stack, TextInput, Title } from "@mantine/core";
+import { Button, Center, Divider, Flex, PasswordInput, Stack, TextInput, Title } from "@mantine/core";
 import { useForm } from '@mantine/form';
 import { useTranslation } from "react-i18next";
 import { IconArrowRight, IconPasswordUser, IconUser } from "@tabler/icons-react";
@@ -12,16 +12,9 @@ import { HigabaseLogo } from "../../../components/Logo/Logo";
 import { HomeActionButton } from "../../../components/Button/Action/Home/Home";
 import { ResendActionButton } from "../../../components/Button/Action/Resend/Resend";
 import { RegisterActionButton } from "../../../components/Button/Action/Register/Register";
-import { ApiCallRegulations, type DataBaseProtocol } from "../../../store/regulation/regulation";
-import { buildApiProtocol } from "../../../store/comunication/api";
-import { useDisclosure } from "@mantine/hooks";
-import type { TokenRegulation } from "../../../store/regulation/token.regulation";
 import { useNavigate } from "react-router-dom";
-import type { TokenAnalizer } from "../../../store/regulation/resent.regulation";
 
-export function LoginPage() {
-    const [modalMessage, setModalMessage] = useState('')
-    const [opened, { open, close}] = useDisclosure(false);
+export function LoginPage() {;
     const [submitting, setSubmitting] = useState(false)
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -40,33 +33,11 @@ export function LoginPage() {
         clearInputErrorOnChange: true
 
     });
-    const onSubmit = form.onSubmit( async (value) => {
+        
+    const onSubmit = form.onSubmit((value) => {
         setSubmitting(true);
-        const res: DataBaseProtocol<TokenRegulation> = await buildApiProtocol(ApiCallRegulations.LOGIN, {
-            hbEmail: value.hbEmail,
-            hbPassword: value.hbPassword,
-        });
-        if (res.ok) {
-            navigate('/dashboard')
-        } else {
-            form.reset();
-            setModalMessage(t(res.message));
-            open();
-            setSubmitting(false);
-        };
-        console.log(res)
+        navigate('/session', { replace: true, state: { hbEmail: value.hbEmail, hbPassword: value.hbPassword }})
     });
-    useEffect(() => {
-        let once = false;               
-        (async () => {
-            if (once) return; 
-            once = true;
-            const res = await buildApiProtocol<TokenAnalizer>(ApiCallRegulations.GUARD);
-            if (res.ok) {
-            navigate('/dashboard', { replace: true });
-            }
-        })();
-    }, [navigate]);
 
     useEffect(() => {
         pageHeaders(t('auth.title.sing_in'), t('auth.description.sing_in'), localePageHeader());
@@ -78,9 +49,6 @@ export function LoginPage() {
 
     return (
         <>
-        <Modal opened={opened} onClose={close} title={`${t("auth.modal.err_not_compleeted")}`} >
-            <Alert variant="light" color="red">{modalMessage}</Alert>
-        </Modal>
         <Center h={"100vh"}>
         <form style={{ width: "100%"}} onSubmit={onSubmit}>
         <Stack w={"100%"} maw={500} px={"xl"} gap={"xs"} mx="auto" align="center">

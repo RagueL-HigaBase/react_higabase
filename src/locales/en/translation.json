@@ -26,7 +26,9 @@
             "get_started": "Get started",
             "sing_in": "Sign in to account",
             "resend": "Resend email",
-            "congrat": "Registration completed successfully"
+            "congrat": "Registration completed successfully",
+            "pin": "Set up session PIN",
+            "pin_confirm": "Enter last session PIN"
         },
         "placeholder": {
             "email": "exemple@example.com",
@@ -49,7 +51,9 @@
         "description" : {
             "confirm": "Welcome aboard! Your account is set up. To unlock full access, verify your email. Look for our confirmation email in your inbox, click the link, and start exploring today.",
             "register": "Create an account in a few simple steps. Register with your email and password to access all features, manage your profile, and start using our services securely.",
-            "sing_in": "Sign in to explore your dashboard, update your info, and stay connected."
+            "sing_in": "Sign in to explore your dashboard, update your info, and stay connected.",
+            "set_up_pin": "The PIN you entered is temporary and not linked to your account or profile. It is a one-time key valid only for the current session.",
+            "confirm_pin": "For security, please confirm your identity by entering the PIN from your last session. Note: an incorrect code will end your session and require you to log in again."
         },
         "modal": {
             "err_not_compleeted": "Complete Your Registration"

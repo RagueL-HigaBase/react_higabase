@@ -12,6 +12,18 @@ export const ApiMethods  = {
 } 
 
 export const ApiCallRegulations  = {
+    TOKEN_GUARD: {
+        method: 'POST',
+        endpoint: '/core/token'
+    },
+    SESSION_GET: {
+        method: 'GET',
+        endpoint: '/core/session'
+    },
+    SESSION_PATCH: {
+        method: 'PATCH',
+        endpoint: '/core/session'
+    },
     REGISTRATION: {
         method: 'POST',
         endpoint: '/core/register',
@@ -19,10 +31,6 @@ export const ApiCallRegulations  = {
     LOGIN: {
         method: 'POST',
         endpoint: '/core/login'
-    },
-    GUARD: {
-        method: 'POST',
-        endpoint: '/core/guard'
     },
     IDENTITY: {
         method: 'POST',
