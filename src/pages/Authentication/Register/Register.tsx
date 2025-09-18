@@ -45,7 +45,7 @@ export function RegisterPage() {
     const onSubmit = form.onSubmit( async (value) => {
         setSubmitting(true);
 
-        const res: DataBaseProtocol<ValidateRegister> = await buildApiProtocol(ApiCallRegulations.REGISTRATION, {
+        const res: DataBaseProtocol<ValidateRegister> = await buildApiProtocol<ValidateRegister>(ApiCallRegulations.REGISTRATION, {
             hbEmail: value.hbEmail,
             hbPassword: value.hbPassword,
             hbConfirm: value.hbConfirm
