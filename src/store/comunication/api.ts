@@ -1,4 +1,4 @@
-import type { ApiCallRegulation, DataBaseProtocol } from "../regulation/regulation";
+import type { ApiCallRegulation, DataBaseProtocol } from "../regulation/endpoint.regulation";
 
 export type HTTPmethode = "GET"| "POST"| "PUT" | "DELETE" | "OPTIONS"| "PATCH";
 
@@ -12,11 +12,10 @@ export async function buildApiProtocol<T>(regulation: ApiCallRegulation, body?: 
         credentials: 'include',
         body: body !== undefined ? JSON.stringify(body) : undefined
     })
-
-    const data = await res.json();
-
-    if (!res.ok) {
-        return { ok: false, message: data.message ?? "server.error.message"}
+    const data: DataBaseProtocol<T> = await res.json();
+    if (!data.ok) {
+        console.log(data.message);
+        return { ok: false, message: data.message }
     }
-    return data
+    return data;
 }

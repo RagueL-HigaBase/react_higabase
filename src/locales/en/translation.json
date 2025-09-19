@@ -53,7 +53,7 @@
             "register": "Create an account in a few simple steps. Register with your email and password to access all features, manage your profile, and start using our services securely.",
             "sing_in": "Sign in to explore your dashboard, update your info, and stay connected.",
             "set_up_pin": "The PIN you entered is temporary and not linked to your account or profile. It is a one-time key valid only for the current session.",
-            "confirm_pin": "For security, please confirm your identity by entering the PIN from your last session. Note: an incorrect code will end your session and require you to log in again."
+            "confirm_pin": "You’ve been offline for a while. To continue, enter the PIN from your last session. An incorrect PIN will end this session and you’ll need to sign in again."
         },
         "modal": {
             "err_not_compleeted": "Complete Your Registration"
@@ -89,7 +89,7 @@
             "message": "The server is not responding at the moment. Your request could not be completed. Please check your connection or try again later."
         },
         "zod": {
-            "message": "A rare server validation error occurred. In most cases, this issue requires immediate attention from our support team. Please contact support right away. support@higabase.com"
+            "message": "A rare server validation error occurred. In most cases, this issue requires immediate attention from our support team. Please contact support right away or: support@higabase.com"
         }
     },
     "protected": {

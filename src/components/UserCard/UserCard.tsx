@@ -2,7 +2,7 @@ import { Avatar, Button, Card, Group, Skeleton, Text } from '@mantine/core';
 import classes from './UserCardImage.module.css';
 import { useEffect, useState } from 'react';
 import { buildApiProtocol } from '../../store/comunication/api';
-import { ApiCallRegulations } from '../../store/regulation/regulation';
+import { ApiCallRegulations } from '../../store/regulation/endpoint.regulation';
 import type { IdentityRegulation } from './UserRegulation';
 
 const stats = [

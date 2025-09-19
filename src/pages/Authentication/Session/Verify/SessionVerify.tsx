@@ -1,27 +1,21 @@
 import { Button, Center, Divider, Flex, PinInput, Stack, Title } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next"
-import { pageHeaders } from "../../../../locales/Seo/Seo";
-import { HigabaseLogo } from "../../../../components/Logo/Logo";
-import { HomeActionButton } from "../../../../components/Button/Action/Home/Home";
-import { useLocation} from "react-router";
-import { Navigate } from "react-router-dom";
 import { IconArrowRight } from "@tabler/icons-react";
 import { useForm } from "@mantine/form";
 import { zod4Resolver } from "mantine-form-zod-resolver";
 import { pinValidate } from "../../../../validators/Login/pin.validate";
-import { ApiCallRegulations } from "../../../../store/regulation/regulation";
+import { ApiCallRegulations } from "../../../../store/regulation/endpoint.regulation";
 import { buildApiProtocol } from "../../../../store/comunication/api";
-import type { SessionRegulation } from "../../../../store/regulation/session.regulation";
+import { HigabaseLogo } from "../../../../components/Logo/Logo";
+import { HomeActionButton } from "../../../../components/Button/Action/Home/Home";
+import type { SessionRegulation } from "../../../../store/regulation/response.regulation";
+import { useNavigate } from "react-router-dom";
 
 
-export function PinLoginPage() {
+export function VeryfySessionPage() {
+    const navigate = useNavigate()
     const { t } = useTranslation();
-    const location = useLocation();
-
-    const { hbEmail, hbPassword } = location.state || {};
-    const invalid = !hbEmail || !hbPassword;
-
     const [submitting, setSubmitting] = useState(false);
     
     const form = useForm({
@@ -38,26 +32,20 @@ export function PinLoginPage() {
 
     const onSubmit = form.onSubmit( async (value) => {
         setSubmitting(true);
-        const res = await buildApiProtocol<SessionRegulation>(ApiCallRegulations.LOGIN, {
-            hbEmail:  hbEmail,
-            hbPassword: hbPassword,
+        const res = await buildApiProtocol<SessionRegulation>(ApiCallRegulations.SESSION_PATCH, {
             hbPin: value.hbPin
         });
-        console.log(res.ok);
+        if (res.ok) navigate('/', { replace: true });
+        navigate('/login', { replace: true });
+        
     }) 
-    useEffect(() => {
-        if (invalid) return;
-        pageHeaders(t(''), t(''));
-    }, [invalid, t, form])
-
-    if (invalid) { return <Navigate to="/login" replace /> };
 
     return (
         <form style={{ width: "100%"}} onSubmit={onSubmit}> 
             <Center h={"100vh"}>
                 <Stack w={"100%"} maw={500} px={"xl"} gap={"xs"} mx="auto" align="center">
                 <HigabaseLogo/>
-                <Title order={5} ta={"center"}>{t("auth.title.pin")}</Title>
+                <Title order={5} ta={"center"}>{t("auth.title.pin_confirm")}</Title>
                 <Divider w={"100%"} label= {
                     <Flex justify={"center"} align={"center"} gap={"xs"}>
                         <HomeActionButton/>
@@ -71,7 +59,7 @@ export function PinLoginPage() {
                     key={form.key("hbPin")}
                     {...form.getInputProps("hbPin")}
                 />
-                <Title order={6} ta={"center"} >{t("auth.description.set_up_pin")}</Title>
+                <Title order={6} ta={"center"} >{t("auth.description.confirm_pin")}</Title>
 
                 <Button
                     disabled={!form.isValid() || submitting}

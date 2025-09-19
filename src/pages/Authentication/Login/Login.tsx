@@ -36,7 +36,7 @@ export function LoginPage() {;
         
     const onSubmit = form.onSubmit((value) => {
         setSubmitting(true);
-        navigate('/session', { replace: true, state: { hbEmail: value.hbEmail, hbPassword: value.hbPassword }})
+        navigate('/build-session', { replace: true, state: { hbEmail: value.hbEmail, hbPassword: value.hbPassword }})
     });
 
     useEffect(() => {

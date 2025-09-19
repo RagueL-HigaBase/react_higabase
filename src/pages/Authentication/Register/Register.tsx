@@ -13,7 +13,7 @@ import { HomeActionButton } from "../../../components/Button/Action/Home/Home";
 import { LoginActionButton } from "../../../components/Button/Action/Login/Login";
 import { ResendActionButton } from "../../../components/Button/Action/Resend/Resend";
 import { buildApiProtocol } from "../../../store/comunication/api";
-import { ApiCallRegulations, type DataBaseProtocol } from "../../../store/regulation/regulation";
+import { ApiCallRegulations, type DataBaseProtocol } from "../../../store/regulation/endpoint.regulation";
 import { useDisclosure } from "@mantine/hooks";
 import type { ValidateRegister } from "../../../validators/Register/Register.validate";
 import { useNavigate } from "react-router-dom";

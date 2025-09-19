@@ -16,12 +16,12 @@ export const ApiCallRegulations  = {
         method: 'POST',
         endpoint: '/core/token'
     },
-    SESSION_GET: {
-        method: 'GET',
-        endpoint: '/core/session'
-    },
     SESSION_PATCH: {
         method: 'PATCH',
+        endpoint: '/core/session'
+    },
+    SESSION_POST: {
+        method: 'POST',
         endpoint: '/core/session'
     },
     REGISTRATION: {
