@@ -80,13 +80,15 @@
         "prisma": {
             "is_existing_user": "An account with this email already exists. Please log in with your credentials or reset your password if you cannot access your account.",
             "not_existing_user": "No account found with this email address. Please check for typos or sign up to create a new account.",
-            "account_not_activated": "Your profile is not yet activated. Please confirm your email address to complete activation and start using all features."
+            "account_not_activated": "Your profile is not yet activated. Please confirm your email address to complete activation and start using all features.",
+            "password_notmatch": "Incorrect password. For your security, this session cannot continue. Please go back to the login page and try again. If you’ve forgotten your password, use the reset option to regain access."
         },
         "title": {
             "register": "Inernal Errro"
         },
         "error": {
-            "message": "The server is not responding at the moment. Your request could not be completed. Please check your connection or try again later."
+            "message": "The server is not responding at the moment. Your request could not be completed. Please check your connection or try again later.",
+            "no_session": "No active session detected. To continue, log in again. If this page appeared in error, go to the login page."
         },
         "zod": {
             "message": "A rare server validation error occurred. In most cases, this issue requires immediate attention from our support team. Please contact support right away or: support@higabase.com"

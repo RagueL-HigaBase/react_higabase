@@ -1,11 +1,11 @@
 import { Button, Center, Divider, Flex, PinInput, Stack, Title } from "@mantine/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next"
 import { IconArrowRight } from "@tabler/icons-react";
 import { useForm } from "@mantine/form";
 import { zod4Resolver } from "mantine-form-zod-resolver";
 import { pinValidate } from "../../../../validators/Login/pin.validate";
-import { ApiCallRegulations } from "../../../../store/regulation/endpoint.regulation";
+import { ApiCallRegulations, type DataBaseProtocol } from "../../../../store/regulation/endpoint.regulation";
 import { buildApiProtocol } from "../../../../store/comunication/api";
 import { HigabaseLogo } from "../../../../components/Logo/Logo";
 import { HomeActionButton } from "../../../../components/Button/Action/Home/Home";
@@ -14,7 +14,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export function VeryfySessionPage() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const { t } = useTranslation();
     const [submitting, setSubmitting] = useState(false);
     
@@ -29,14 +29,17 @@ export function VeryfySessionPage() {
         clearInputErrorOnChange: true
 
     });
+    useEffect(() => {
+
+    }, [])
 
     const onSubmit = form.onSubmit( async (value) => {
         setSubmitting(true);
-        const res = await buildApiProtocol<SessionRegulation>(ApiCallRegulations.SESSION_PATCH, {
+        const res: DataBaseProtocol<SessionRegulation> = await buildApiProtocol<SessionRegulation>(ApiCallRegulations.SESSION_PATCH, {
             hbPin: value.hbPin
         });
+        if (!res.ok) navigate('/mock', { replace: true, state: { message: "server.error.no_session"} });
         if (res.ok) navigate('/', { replace: true });
-        navigate('/login', { replace: true });
         
     }) 
 

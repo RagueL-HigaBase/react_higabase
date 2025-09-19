@@ -10,7 +10,7 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { useForm } from "@mantine/form";
 import { zod4Resolver } from "mantine-form-zod-resolver";
 import { pinValidate } from "../../../../validators/Login/pin.validate";
-import { ApiCallRegulations } from "../../../../store/regulation/endpoint.regulation";
+import { ApiCallRegulations, type DataBaseProtocol } from "../../../../store/regulation/endpoint.regulation";
 import { buildApiProtocol } from "../../../../store/comunication/api";
 import type { SessionRegulation } from "../../../../store/regulation/response.regulation";
 
@@ -40,12 +40,14 @@ export function BuilsSessionPage() {
 
     const onSubmit = form.onSubmit( async (value) => {
         setSubmitting(true);
-        const res = await buildApiProtocol<SessionRegulation>(ApiCallRegulations.LOGIN, {
+        const res: DataBaseProtocol<SessionRegulation> = await buildApiProtocol<SessionRegulation>(ApiCallRegulations.LOGIN, {
             hbEmail:  hbEmail,
             hbPassword: hbPassword,
             hbPin: value.hbPin
         });
-        if (!res.ok) navigate('/login', { replace: true, state: {message: ""}});
+        if (!res.ok) {
+            navigate('/mock', { replace: true, state: { message: res.message }});
+        }
         if (res.ok) navigate('/', { replace: true });
     }) 
     useEffect(() => {

@@ -10,15 +10,18 @@ import { ProfilePage } from "./pages/Protected/Profile/Profile"
 import { Error403 } from "./pages/Error/403/Error403"
 import { CallTokenProvider } from "./pages/Authentication/Session/Provider/CallTokenProvider"
 import { BuilsSessionPage } from "./pages/Authentication/Session/Build/BuildSession"
-import { MockLoginPage } from "./pages/Mock/Login/Login"
 import { VeryfySessionPage } from "./pages/Authentication/Session/Verify/SessionVerify"
 import { CallSessionProvider } from "./pages/Authentication/Session/Provider/CallSessionProvider"
+import { MockPage } from "./pages/Mock/Mock"
+import { MainPage } from "./pages/Public/Main/Main"
+import { HomePage } from "./pages/Home/Home"
 
 function App() {
 
 return (
     <>
     <Routes>
+        <Route path="main" element={<MainPage/>}/>
         <Route path="/register" element={<RegisterPage/>} />
         <Route path="/congrat" element={<CongratPage/>}/>
         <Route path="/resend" element={<ResendPage/>}/>
@@ -27,7 +30,7 @@ return (
         </Route>
         <Route element={<CallSessionProvider/>}>
             <Route element={<AppLayout/>}>
-                <Route path="/" element={<DashboardPage/>}/>    
+                <Route path="/" element={<HomePage/>}/>    
                 <Route path="/dashboard" element={<DashboardPage/>}/>
                 <Route path="/profile" element={<ProfilePage/>}/>
             </Route>
@@ -37,7 +40,7 @@ return (
         <Route path="/400" element={<Error500/>}/>
         <Route path="/403" element={<Error403/>} />
         <Route path="*" element={<Error500/>}/>
-        <Route path="moklogin" element={<MockLoginPage/>}/>
+        <Route path="mock" element={<MockPage/>}/>
     </Routes>
     </>
   )

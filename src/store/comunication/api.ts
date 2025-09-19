@@ -14,7 +14,6 @@ export async function buildApiProtocol<T>(regulation: ApiCallRegulation, body?: 
     })
     const data: DataBaseProtocol<T> = await res.json();
     if (!data.ok) {
-        console.log(data.message);
         return { ok: false, message: data.message }
     }
     return data;

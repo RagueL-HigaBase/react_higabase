@@ -2,8 +2,7 @@ import { useEffect, useState } from "react"
 import { buildApiProtocol } from "../../../../store/comunication/api"
 import { ApiCallRegulations, type DataBaseProtocol } from "../../../../store/regulation/endpoint.regulation"
 import type { PageShowStatus } from "./CallTokenProvider";
-import { Outlet } from "react-router";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 import { Center, Loader } from "@mantine/core";
 import type { SessionRegulation } from "../../../../store/regulation/response.regulation";
 

@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { useForm } from '@mantine/form';
-import { Alert, Button, Center, Divider, Flex, Modal, PasswordInput, Stack, TextInput, Title } from "@mantine/core";
+import {  Button, Center, Divider, Flex, PasswordInput, Stack, TextInput, Title } from "@mantine/core";
 import { IconPasswordUser, IconUser, IconUserCheck } from "@tabler/icons-react";
 import { ToggleScheme } from "../../../components/Styles/ToggleScheme/ToggleScheme";
 import { zod4Resolver } from "mantine-form-zod-resolver";
@@ -14,14 +14,11 @@ import { LoginActionButton } from "../../../components/Button/Action/Login/Login
 import { ResendActionButton } from "../../../components/Button/Action/Resend/Resend";
 import { buildApiProtocol } from "../../../store/comunication/api";
 import { ApiCallRegulations, type DataBaseProtocol } from "../../../store/regulation/endpoint.regulation";
-import { useDisclosure } from "@mantine/hooks";
 import type { ValidateRegister } from "../../../validators/Register/Register.validate";
 import { useNavigate } from "react-router-dom";
 
 
 export function RegisterPage() {
-    const [modalMessage, setModalMessage] = useState('')
-    const [opened ,{ open, close }] = useDisclosure(false);
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [confirm, setConfirm] = useState('');
@@ -51,14 +48,11 @@ export function RegisterPage() {
             hbConfirm: value.hbConfirm
         });
 
-        if (res.ok) {
-            navigate("/congrat", { replace: true ,state: { hbEmail: value.hbEmail }});
-        } else {
+        if ( res.ok) { navigate("/congrat", { replace: true ,state: { hbEmail: value.hbEmail }})};
+        if (!res.ok) { navigate('/mock', { replace: true, state: { message: res.message }})}
             form.reset();
-            setModalMessage(t(`${res.message}`));
-            open();
             setSubmitting(false)
-        }
+        
     });
     
     useEffect(() => {
@@ -71,9 +65,6 @@ export function RegisterPage() {
 
     return (
         <>
-        <Modal opened={opened} onClose={close} title="Inernal errro" >
-            <Alert variant="light" color="red">{modalMessage}</Alert>
-        </Modal>
         <Center h={"100vh"}>
         <form style={{ width: "100%"}} onSubmit={onSubmit}>
         <Stack w={"100%"} maw={500} px={"xl"} gap={"xs"} mx="auto" align="center">

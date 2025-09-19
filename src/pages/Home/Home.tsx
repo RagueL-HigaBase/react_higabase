@@ -38,7 +38,6 @@ export function HomePage() {
                 </ActionIcon>
             </Flex>
         </Flex>
-    
         </Box>
     )
 }
